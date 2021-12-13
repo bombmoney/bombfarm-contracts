@@ -12,7 +12,7 @@ const {
   platforms: { pancake, beefyfinance },
   tokens: {
     WBNB: { address: WBNB },
-    BTCB: { address: BTCB },
+    LAZIO: { address: LAZIO },
     DKT: { address: DKT },
     CAKE: { address: CAKE },
   },
@@ -21,27 +21,26 @@ const {
 const shouldVerifyOnEtherscan = false;
 
 const BSHARE = "0x531780FAcE85306877D7e1F05d713D1B50a37F7A";
-const BOMB = "0x522348779DCb2911539e76A1042aA922F9C47Ee3";
 
-const want = web3.utils.toChecksumAddress("0x84392649eb0bC1c1532F2180E58Bae4E1dAbd8D6");
+const want = web3.utils.toChecksumAddress("0x1303246855b5B5EbC71F049Fdb607494e97218f8");
 
 const vaultParams = {
-  mooName: "BOMBfarm BOMB-BTCB",
-  mooSymbol: "bombfarmBOMB-BTCB",
+  mooName: "BOMBfarm BSHARE-BNB",
+  mooSymbol: "bombfarmBSHARE-BNB",
   delay: 7200,
 };
 
 const strategyParams = {
   want,
-  poolId: 1,
+  poolId: 0,
   chef: "0x1083926054069AaD75d7238E9B809b0eF9d94e5B",
   unirouter: pancake.router,
   strategist: "0x0D8e060CA2D847553ec14394ee6B304623E0d1d6", // some address
   keeper: "0x0D8e060CA2D847553ec14394ee6B304623E0d1d6",
   beefyFeeRecipient: "0x0D8e060CA2D847553ec14394ee6B304623E0d1d6",
   outputToNativeRoute: [BSHARE, WBNB],
-  outputToLp0Route: [BSHARE, WBNB, BOMB],
-  outputToLp1Route: [BSHARE, WBNB, BTCB],
+  outputToLp0Route: [BSHARE],
+  outputToLp1Route: [BSHARE, WBNB],
   pendingRewardsFunctionName: "pendingShare", // used for rewardsAvailable(), use correct function name from masterchef
 };
 

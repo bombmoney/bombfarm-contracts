@@ -10,24 +10,24 @@ const ethers = hardhat.ethers;
 const TIMELOCK_ADMIN_ROLE = "0x5f58e3a2316349923ce3780f8d587db2d72378aed66a8261c916544fa6846ca5";
 const STRAT_OWNER_DELAY = 21600;
 const VAULT_OWNER_DELAY = 0;
-const TRUSTED_EOA = "0x3Eb7fB70C03eC4AEEC97C6C6C1B59B014600b7F7";
-const KEEPER = "0x10aee6B5594942433e7Fc2783598c979B030eF3D";
-const chainName = "aurora";
+const TRUSTED_EOA = "0x0D8e060CA2D847553ec14394ee6B304623E0d1d6";
+const KEEPER = "0x0D8e060CA2D847553ec14394ee6B304623E0d1d6";
+const chainName = "bsc";
 
 const config = {
   bifi: null, // addressBook[chainName].tokens.BIFI.address,
   wnative: addressBook[chainName].tokens.WNATIVE.address,
-  rpc: "https://mainnet.aurora.dev/Fon6fPMs5rCdJc4mxX4kiSK1vsKdzc3D8k6UF8aruek",
-  chainName: "aurora",
-  chainId: 1313161554,
+  rpc: "https://bsc-dataseed.binance.org",
+  chainName: "bsc",
+  chainId: 56,
   devMultisig: null,
   treasuryMultisig: null,
-  multicall: null,
-  vaultOwner: null,
-  stratOwner: null,
-  treasury: null,
+  multicall: "0xEF958860Eeb4C2Eb8749a99AB4a24F75772d8B4F",
+  vaultOwner: "0x0D8e060CA2D847553ec14394ee6B304623E0d1d6",
+  stratOwner: "0x0D8e060CA2D847553ec14394ee6B304623E0d1d6",
+  treasury: "0xf01e36CbDcA894C6F8b4A6Dcd882ab65C101448d",
   unirouterHasBifiLiquidity: false,
-  unirouter: ethers.constants.AddressZero,
+  unirouter: "0x10ED43C718714eb63d5aA57B78B54704E256024E",
 };
 
 const proposer = config.devMultisig || TRUSTED_EOA;

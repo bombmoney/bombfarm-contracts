@@ -3,7 +3,7 @@ import * as rlp from "rlp";
 import keccak from "keccak";
 
 export const predictAddresses = async ({ creator }: { creator: string }) => {
-  creator = creator || "0x565EB5e5B21F97AE9200D121e77d2760FFf106cb";
+  creator = creator || "0x5fd56Fa5a86C91031714df9e10751778093062A0";
 
   let currentNonce = await web3.eth.getTransactionCount(creator);
   let currentNonceHex = `0x${currentNonce.toString(16)}`;
